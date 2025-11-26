@@ -24,9 +24,9 @@ export default function Login() {
 
     return (
         <div className="page-center">
-            <div className="panel p-10 w-full max-w-md">
+            <div className="panel p-6 md:p-10 w-full max-w-md">
                 <div className="text-center mb-8">
-                    <img src="/FFFFFF-1.png" alt="SLOOZE" className="h-32 mx-auto" /> 
+                    <img src="/FFFFFF-1.png" alt="SLOOZE" className="h-24 md:h-32 mx-auto" /> 
                     <p className="text-lg mt-2 opacity-80">LOVE COMMODITIES 3000</p>
                 </div>
 

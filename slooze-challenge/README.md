@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# slooze love commodities 3000
 
-## Getting Started
+// take-home challenge - fully deployed to the grid
 
-First, run the development server:
+████████████████████████████████████████ 
+█ SLOOZE LOVE COMMODITIES MANAGEMENT █ 
+█ MAYBE YEAR 3000 INVENTORY SYSTEM ONLINE █
+████████████████████████████████████████
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### features locked & loaded
+
+-   login portal with role-based access control\
+-   manager-only core dashboard → live stats pulled straight from the
+    db\
+-   full commodity matrix → create / read / update / delete via real
+    api\
+-   add/edit/delete products with cyber-glass modal\
+-   light ↔ dark mode toggle (persists in localstorage)\
+-   auth persistence → refresh all you want, you stay logged in\
+-   bonus 25pts: menu items vanish for store keepers (no dashboard
+    access)
+
+### tech stack from the future
+
+-   next.js 16 (app router + turbopack)\
+-   tailwind css + custom secret variables\
+-   zustand + persist middleware\
+-   lucide-react icons\
+-   json-server as mock backend\
+-   vercel ready
+
+### run locally in 2 seconds
+
+``` bash
+npm install
+npm run dev:all    # launches next.js + json-server on port 4000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+demo credentials (straight outta 1999)
+```
+manager@slooze.com → 123
+keeper@slooze.com → 123
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+links to the matrix
+```
+live demo → https://slooze-take-home.vercel.app/
+source code → https://github.com/chloroformshake/slooze-take-home/
+```
 
-## Learn More
+SYSTEM STATUS: ██████████ 100%\
+QUANTUM SYNC: ACTIVE\
+NEON GRID: PULSING\
+GLASS PANELS: REFLECTIVE\
 
-To learn more about Next.js, take a look at the following resources:
+ready to beam this up to neo-tokyo warehouse.\
+see you inside the system, manager.\
+-- transmitted via retro modem & geocities uplink
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 3000 slooze
