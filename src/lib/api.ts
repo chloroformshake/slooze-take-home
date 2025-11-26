@@ -1,5 +1,4 @@
-
-let API_URL = "https://slooze-rust-backend.up.railway.app";
+let API_URL = "https://slooze-express-backend.vercel.app";
 
 if (process.env.NODE_ENV === "development") {
     API_URL = "http://localhost:4000";
