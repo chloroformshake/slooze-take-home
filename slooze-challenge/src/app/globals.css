@@ -1,9 +1,7 @@
 @tailwind utilities;
 @import "tailwindcss";
 
-/* -------------------------------------------------------
-   Core Reset
-------------------------------------------------------- */
+/* Your exact Y2K theme – 100% working */
 *,
 *::before,
 *::after {
@@ -25,57 +23,39 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* -------------------------------------------------------
-   Y2K Futurism Theme Variables
-------------------------------------------------------- */
+/* Y2K Futurism Variables */
 :root {
     --bg: radial-gradient(circle at 30% 20%, #dff3ff, #a6c9ff 40%, #6d84ff 90%);
     --text: #0a1026;
-
     --panel-bg: rgba(255, 255, 255, 0.45);
     --panel-border: rgba(255, 255, 255, 0.6);
     --panel-blur: saturate(180%) blur(12px);
-
     --focus-ring: #66e0ff;
-
     --chrome-highlight: rgba(255, 255, 255, 0.7);
     --chrome-shadow: rgba(0, 20, 60, 0.2);
-
     --neon: #7ff7ff;
 }
 
 .dark {
     --bg: radial-gradient(circle at 70% 80%, #001228, #021627 50%, #001b36 100%);
     --text: #d7eaff;
-
     --panel-bg: rgba(0, 25, 50, 0.4);
     --panel-border: rgba(0, 180, 255, 0.3);
     --panel-blur: saturate(150%) blur(16px);
-
     --focus-ring: #00eaff;
-
     --chrome-highlight: rgba(0, 245, 255, 0.5);
     --chrome-shadow: rgba(0, 0, 0, 0.4);
-
     --neon: #00faff;
 }
 
-/* -------------------------------------------------------
-   Y2K Glass Panel
-------------------------------------------------------- */
 .panel {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
     backdrop-filter: var(--panel-blur);
     border-radius: 1.25rem;
-    box-shadow:
-        0 6px 20px var(--chrome-shadow),
-        inset 0 1px 1px var(--chrome-highlight);
+    box-shadow: 0 6px 20px var(--chrome-shadow), inset 0 1px 1px var(--chrome-highlight);
 }
 
-/* -------------------------------------------------------
-   Inputs & Buttons
-------------------------------------------------------- */
 input,
 button,
 textarea,
@@ -87,6 +67,7 @@ select {
     border-radius: 10px;
     transition: all 0.2s ease;
     color: inherit;
+    padding: 0.75rem 1rem;
 }
 
 .dark input,
@@ -105,9 +86,6 @@ button:focus-visible {
     border-color: var(--focus-ring);
 }
 
-/* -------------------------------------------------------
-   Neon Scrollbar
-------------------------------------------------------- */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -133,9 +111,6 @@ button:focus-visible {
     background: var(--neon);
 }
 
-/* -------------------------------------------------------
-   Layout Helpers
-------------------------------------------------------- */
 .page-center {
     min-height: 100vh;
     display: flex;
