@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:api": "json-server --watch db.json --port 4000",
-    "dev:all": "concurrently \"npm run dev\" \"npm run dev:api\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
