@@ -8,31 +8,31 @@ import { LogOut, Package, LayoutDashboard, Sun, Moon } from "lucide-react";
 export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
     const { role, logout } = useAuth();
     const router = useRouter();
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(
+        typeof window !== "undefined" && localStorage.getItem("theme") === "dark"
+    );
 
     useEffect(() => {
-        if (!role) router.replace("/login");
         document.documentElement.classList.toggle("dark", isDark);
-    }, [role, router, isDark]);
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    }, [isDark]);
 
     if (!role) return null;
     const isManager = role === "Manager";
 
     return (
         <div className="min-h-screen flex">
-            
+
             <aside className="w-80 panel border-r-4 border-cyan-500">
                 <div className="p-8">
-                    <h1 className="text-5xl font-black tracking-wider flex items-center gap-4">
-                        <Package className="w-16 h-16" /> SLOOZE
-                    </h1>
+                    <img src="/FFFFFF-1.png" alt="SLOOZE" className="h-24 mx-auto" /> 
                 </div>
                 <div className="absolute bottom-8 left-8 right-8">
                     <button
                         onClick={() => { logout(); router.push("/login"); }}
-                        className="w-full py-4 bg-red-600 hover:bg-red-500 text-2xl font-bold tracking-wider"
+                        className="w-full py-4 bg-red-600 hover:bg-red-500 text-2xl font-bold tracking-wider cursor-pointer"
                     >
-                        ▓ LOGOUT
+                        🤬 LOGOUT
                     </button>
                 </div>
             </aside>
@@ -45,7 +45,7 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
                     </h2>
                     <button
                         onClick={() => setIsDark(!isDark)}
-                        className="p-4 rounded-full bg-white/30 hover:bg-white/50 transition backdrop-blur"
+                        className="p-4 rounded-full bg-white/30 hover:bg-white/50 transition backdrop-blur cursor-pointer"
                     >
                         {isDark ? <Sun className="w-8 h-8" /> : <Moon className="w-8 h-8" />}
                     </button>

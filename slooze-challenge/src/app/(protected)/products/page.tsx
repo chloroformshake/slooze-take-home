@@ -55,8 +55,8 @@ export default function Products() {
     return (
         <div className="flex flex-col gap-8">
             <div className="flex justify-between items-center">
-                <button onClick={() => openModal()} className="flex items-center gap-3 px-8 py-5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-2xl tracking-wider rounded-xl shadow-lg hover:shadow-cyan-500/50 transition">
-                    <Plus className="w-10 h-10" /> NEW COMMODITY
+                <button onClick={() => openModal()} className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg tracking-wider rounded-xl shadow-lg hover:shadow-cyan-500/50 transition">
+                    <Plus className="w-5 h-5" /> NEW COMMODITY
                 </button>
             </div>
 
@@ -79,8 +79,8 @@ export default function Products() {
                                 <td className="p-6 font-bold">{p.quantity < 100 ? <span className="text-red-500">{p.quantity}</span> : p.quantity}</td>
                                 <td className="p-6 font-mono">${p.price}</td>
                                 <td className="p-6 flex gap-4">
-                                    <button onClick={() => openModal(p)} className="p-3 hover:bg-white/20 rounded"><Edit2 /></button>
-                                    <button onClick={() => deleteProduct(p.id)} className="p-3 hover:bg-red-500/30 rounded"><Trash2 /></button>
+                                    <button onClick={() => openModal(p)} className="cursor-pointer p-3 hover:bg-green-500/30 rounded"><Edit2 /></button>
+                                    <button onClick={() => deleteProduct(p.id)} className="cursor-pointer p-3 hover:bg-red-500/30 rounded"><Trash2 /></button>
                                 </td>
                             </tr>
                         ))}
@@ -99,11 +99,11 @@ export default function Products() {
                             <input type="number" placeholder="PRICE $" value={form.price} onChange={e => setForm({ ...form, price: e.target.value })} className="text-2xl" />
                         </div>
                         <div className="flex gap-6 mt-10">
-                            <button onClick={saveProduct} className="flex-1 py-5 bg-cyan-500 hover:bg-cyan-400 text-black font-black text-3xl tracking-wider">
-                                {editing ? "◈ UPDATE" : "◈ DEPLOY"}
+                            <button onClick={saveProduct} className="flex-1 py-5 bg-cyan-500 hover:bg-cyan-400 text-black font-black text-3xl tracking-wider cursor-pointer">
+                                {editing ? "😘 UPDATE" : "😈 DEPLOY"}
                             </button>
-                            <button onClick={() => setShowModal(false)} className="flex-1 py-5 bg-red-600 hover:bg-red-500 text-3xl font-black tracking-wider">
-                                ▓ CANCEL
+                            <button onClick={() => setShowModal(false)} className="flex-1 py-5 bg-red-600 hover:bg-red-500 text-3xl font-black tracking-wider cursor-pointer">
+                                🤬 CANCEL
                             </button>
                         </div>
                     </div>

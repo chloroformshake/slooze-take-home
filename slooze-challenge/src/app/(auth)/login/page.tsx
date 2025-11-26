@@ -26,11 +26,8 @@ export default function Login() {
         <div className="page-center">
             <div className="panel p-10 w-full max-w-md">
                 <div className="text-center mb-8">
-                    <div className="w-24 h-24 bg-cyan-500 rounded-full mx-auto flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/50">
-                        <LogIn className="w-12 h-12 text-black" />
-                    </div>
-                    <h1 className="text-5xl font-black tracking-wider">SLOOZE</h1>
-                    <p className="text-lg mt-2 opacity-80">COMMODITIES 3000</p>
+                    <img src="/FFFFFF-1.png" alt="SLOOZE" className="h-32 mx-auto" /> 
+                    <p className="text-lg mt-2 opacity-80">LOVE COMMODITIES 3000</p>
                 </div>
 
                 <form onSubmit={handleLogin} className="space-y-6 flex flex-col gap-4">
@@ -52,7 +49,7 @@ export default function Login() {
                     />
                     <button
                         type="submit"
-                        className="w-full py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xl tracking-wider shadow-lg hover:shadow-cyan-500/50 transition"
+                        className="w-full py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-xl tracking-wider shadow-lg hover:shadow-cyan-500/50 transition cursor-pointer"
                     >
                         ▶ ENTER SYSTEM
                     </button>

@@ -58,7 +58,7 @@ export default function Dashboard() {
 
             <div className="panel p-10 text-center">
                 <p className="text-3xl font-black opacity-90">
-                    ◈ QUANTUM INVENTORY SYNC: 100% ◈ ALL NODES OPERATIONAL ◈
+                    ◈ QUANTUM INVENTORY SYNC: 100% ◈
                 </p>
             </div>
         </div>
