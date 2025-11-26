@@ -20,23 +20,13 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
 
     return (
         <div className="min-h-screen flex">
-            {/* Y2K Sidebar */}
+            
             <aside className="w-80 panel border-r-4 border-cyan-500">
                 <div className="p-8">
                     <h1 className="text-5xl font-black tracking-wider flex items-center gap-4">
                         <Package className="w-16 h-16" /> SLOOZE
                     </h1>
                 </div>
-                <nav className="mt-10 space-y-4 px-8">
-                    {isManager && (
-                        <a href="/dashboard" className="block py-4 px-6 text-2xl font-bold hover:bg-white/20 transition rounded-lg">
-                            ◈ DASHBOARD
-                        </a>
-                    )}
-                    <a href="/products" className="block py-4 px-6 text-2xl font-bold hover:bg-white/20 transition rounded-lg">
-                        ◈ PRODUCTS
-                    </a>
-                </nav>
                 <div className="absolute bottom-8 left-8 right-8">
                     <button
                         onClick={() => { logout(); router.push("/login"); }}

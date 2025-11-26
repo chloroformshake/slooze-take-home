@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "name": "Quantum Rice",
+      "category": "Grains",
+      "quantity": 8,
+      "price": 89,
+      "id": "1"
+    },
+    {
+      "name": "Neon CBD Oil",
+      "category": "Liquids",
+      "quantity": 120,
+      "price": 3,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "name": "Cyber Beans",
+      "category": "Legumes",
+      "quantity": 45,
+      "price": 67
+    },
+    {
+      "name": "Plasma Salt",
+      "category": "Seasoning",
+      "quantity": 1,
+      "price": 500,
+      "id": "4"
+    },
+    {
+      "name": "fuck",
+      "category": "nigga",
+      "quantity": 4.2,
+      "price": 69,
+      "id": "26b3"
+    }
+  ]
+}

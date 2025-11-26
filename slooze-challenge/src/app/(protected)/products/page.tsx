@@ -1,27 +1,30 @@
 "use client";
 
-import { useAuth } from "@/store/authStore";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { api } from "@/lib/api";
 import { Plus, Edit2, Trash2 } from "lucide-react";
 
+type Product = { id: number; name: string; category: string; quantity: number; price: number };
+
 export default function Products() {
-    const { role } = useAuth();
-    const isManager = role === "Manager";
-
-    const [products, setProducts] = useState([
-        { id: 1, name: "Quantum Rice", category: "Grains", quantity: 850, price: 89 },
-        { id: 2, name: "Neon Oil", category: "Liquids", quantity: 120, price: 320 },
-        { id: 3, name: "Cyber Beans", category: "Legumes", quantity: 45, price: 67 },
-    ]);
-
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    const [editing, setEditing] = useState<any>(null);
+    const [editing, setEditing] = useState<Product | null>(null);
     const [form, setForm] = useState({ name: "", category: "", quantity: "", price: "" });
 
-    const openModal = (product?: any) => {
+    const loadProducts = async () => {
+        const data = await api.getProducts();
+        setProducts(data);
+        setLoading(false);
+    };
+
+    useEffect(() => { loadProducts(); }, []);
+
+    const openModal = (product?: Product) => {
         if (product) {
             setEditing(product);
-            setForm({ name: product.name, category: product.category, quantity: product.quantity, price: product.price });
+            setForm({ name: product.name, category: product.category, quantity: String(product.quantity), price: String(product.price) });
         } else {
             setEditing(null);
             setForm({ name: "", category: "", quantity: "", price: "" });
@@ -29,26 +32,30 @@ export default function Products() {
         setShowModal(true);
     };
 
-    const saveProduct = () => {
+    const saveProduct = async () => {
+        const payload = { ...form, quantity: +form.quantity, price: +form.price };
         if (editing) {
-            setProducts(products.map(p => p.id === editing.id ? { ...p, ...form, quantity: +form.quantity, price: +form.price } : p));
+            await api.updateProduct(editing.id, payload);
         } else {
-            setProducts([...products, { id: Date.now(), ...form, quantity: +form.quantity, price: +form.price }]);
+            await api.addProduct(payload);
         }
+        loadProducts();
         setShowModal(false);
     };
 
-    const deleteProduct = (id: number) => {
-        setProducts(products.filter(p => p.id !== id));
+    const deleteProduct = async (id: number) => {
+        if (confirm("▓ DELETE COMMODITY?")) {
+            await api.deleteProduct(id);
+            loadProducts();
+        }
     };
+
+    if (loading) return <div className="text-6xl font-black text-center mt-40 animate-pulse">◈ LOADING MATRIX ◈</div>;
 
     return (
         <div className="flex flex-col gap-8">
             <div className="flex justify-between items-center">
-                <button
-                    onClick={() => openModal()}
-                    className="flex items-center gap-3 px-8 py-5 bg-cyan-500 hover:bg-cyan-400  text-white font-bold text-2xl tracking-wider rounded-xl shadow-lg hover:shadow-cyan-500/50 transition"
-                >
+                <button onClick={() => openModal()} className="flex items-center gap-3 px-8 py-5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-2xl tracking-wider rounded-xl shadow-lg hover:shadow-cyan-500/50 transition">
                     <Plus className="w-10 h-10" /> NEW COMMODITY
                 </button>
             </div>
@@ -81,7 +88,6 @@ export default function Products() {
                 </table>
             </div>
 
-            {/* Y2K Modal */}
             {showModal && (
                 <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50" onClick={() => setShowModal(false)}>
                     <div className="panel p-10 w-full max-w-2xl" onClick={e => e.stopPropagation()}>
