@@ -1,4 +1,9 @@
-const API_URL = "http://localhost:4000";
+
+let API_URL = "http://localhost:4000";
+
+if (process.env.NODE_ENV === "development") {
+    API_URL = "http://localhost:4000";
+}
 
 export const api = {
     getProducts: () => fetch(`${API_URL}/products`).then(r => r.json()),

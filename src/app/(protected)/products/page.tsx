@@ -74,10 +74,10 @@ export default function Products() {
                     <tbody>
                         {products.map((p) => (
                             <tr key={p.id} className="border-t border-white/20 hover:bg-white/10 transition">
-                                <td className="p-6 font-mono text-lg">{p.name}</td>
+                                <td className="p-6  text-lg">{p.name}</td>
                                 <td className="p-6">{p.category}</td>
                                 <td className="p-6 font-bold">{p.quantity < 100 ? <span className="text-red-500">{p.quantity}</span> : p.quantity}</td>
-                                <td className="p-6 font-mono">${p.price}</td>
+                                <td className="p-6 ">${p.price}</td>
                                 <td className="p-6 flex gap-4">
                                     <button onClick={() => openModal(p)} className="cursor-pointer p-3 hover:bg-green-500/30 rounded"><Edit2 /></button>
                                     <button onClick={() => deleteProduct(p.id)} className="cursor-pointer p-3 hover:bg-red-500/30 rounded"><Trash2 /></button>

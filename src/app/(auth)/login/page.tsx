@@ -36,7 +36,7 @@ export default function Login() {
                         placeholder="EMAIL@SLOOZE.XYZ"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full text-lg font-mono"
+                        className="w-full text-lg "
                         required
                     />
                     <input
@@ -44,7 +44,7 @@ export default function Login() {
                         placeholder="PASSWORD"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="w-full text-lg font-mono"
+                        className="w-full text-lg "
                         required
                     />
                     <button
