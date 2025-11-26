@@ -1,5 +1,9 @@
 # slooze love commodities 3000
 
+[LIVE DEMO PROJECT](https://slooze-take-home.vercel.app)
+
+<img width="700" height="350" alt="Screenshot 2025-11-26 at 3 25 23 PM" src="https://github.com/user-attachments/assets/5d7735a7-1d35-46a4-847e-068c61e077f7" />
+
 // take-home challenge - fully deployed to the grid
 
 ████████████████████████████████████████ 
