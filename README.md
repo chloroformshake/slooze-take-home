@@ -52,7 +52,8 @@ keeper@slooze.com → 123
 links to the matrix (straight toward 2099)
 ```
 live demo → https://slooze-take-home.vercel.app/
-source code → https://github.com/chloroformshake/slooze-take-home/
+source code [frontend] → https://github.com/chloroformshake/slooze-take-home/
+source code [backend] → https://github.com/chloroformshake/slooze-express-backend/
 ```
 
 SYSTEM STATUS: ██████████ 100%\
