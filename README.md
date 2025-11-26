@@ -39,7 +39,7 @@
 
 ``` bash
 npm install
-npm run dev:all    # launches next.js + json-server on port 4000
+npm run dev
 ```
 
 
