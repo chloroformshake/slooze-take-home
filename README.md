@@ -3,8 +3,11 @@
 // take-home challenge - fully deployed to the grid
 
 ████████████████████████████████████████ 
+
 █ SLOOZE LOVE COMMODITIES MANAGEMENT █ 
+
 █ MAYBE YEAR 3000 INVENTORY SYSTEM ONLINE █
+
 ████████████████████████████████████████
 
 ### features locked & loaded
